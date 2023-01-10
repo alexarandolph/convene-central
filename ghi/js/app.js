@@ -15,7 +15,7 @@ function createCard(name, location, description, pictureUrl, starts, ends) {
     `;
   }
 
-window.addEventListener('DOMContentLoaded', async () => {
+  window.addEventListener('DOMContentLoaded', async () => {
 
     const url = 'http://localhost:8000/api/conferences/';
 
@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
       if (!response.ok) {
         // Figure out what to do when the response is bad
+        console.log("Something went wrong")
       } else {
         const data = await response.json();
 
@@ -50,6 +51,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     } catch (e) {
       console.error(e);
       // Figure out what to do if an error is raised
+      console.log("There was an error: " + e)
     }
-    console.log(details)
+
   });
