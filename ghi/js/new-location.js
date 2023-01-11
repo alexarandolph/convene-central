@@ -22,5 +22,10 @@ window.addEventListener('DOMContentLoaded', async () => {
         selectTag.appendChild(option)
      }
     }
+    const formTag = document.getElementById('create-location-form');
+    formTag.addEventListener('submit', event => {
+      event.preventDefault();
+      console.log('need to submit the form data');
+    });
 
   });
