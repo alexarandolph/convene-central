@@ -12,7 +12,7 @@ function createCard(name, location, description, pictureUrl, starts, ends) {
           ${new Date(ends).toLocaleDateString()}
         </div>
       </div>
-    `;
+    `
   }
 
   window.addEventListener('DOMContentLoaded', async () => {
