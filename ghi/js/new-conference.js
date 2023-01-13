@@ -27,11 +27,10 @@ window.addEventListener('DOMContentLoaded', async () => {
     const formTag = document.getElementById('create-conference-form');
     formTag.addEventListener('submit', async event => {
       event.preventDefault();
-      console.log('need to submit the form data');
 
         const formData = new FormData(formTag);
         const json = JSON.stringify(Object.fromEntries(formData));
-        console.log(json);
+
 
         const conferenceUrl = 'http://localhost:8000/api/conferences/';
         const fetchConfig = {
