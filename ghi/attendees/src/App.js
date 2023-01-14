@@ -3,7 +3,9 @@ import Nav from './Nav';
 
 function App(props) {
   return (
+    <>
     <Nav />
+
     <div className="container">
       <table className="table table-striped">
         <thead>
@@ -30,6 +32,7 @@ function App(props) {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 
