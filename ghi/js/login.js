@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async event => {
       event.preventDefault();
 
-      const data = Object.fromEntries(new FormData(form))
+
       const fetchOptions = {
         credentials: 'include',
         method: 'post',
@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
           'Content-Type': 'application/json',
         }
       };
-      };
       const url = 'http://localhost:8000/login/';
       const response = await fetch(url, fetchOptions);
       if (response.ok) {
@@ -20,5 +19,4 @@ window.addEventListener('DOMContentLoaded', () => {
       } else {
         console.error(response);
       }
-    });
-  });
+    })});
