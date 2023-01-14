@@ -4,7 +4,7 @@ import Nav from './Nav';
 function App(props) {
   return (
     <>
-    <Nav />
+    <Nav className="Navbar" />
 
     <div className="container">
       <table className="table table-striped">
