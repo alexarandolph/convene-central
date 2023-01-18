@@ -9,6 +9,27 @@ function LocationForm(props) {
         const value = event.target.value;
         setName(value);
       }
+    const [roomCount, setRoomCount] = useState('');
+
+    const handleRoomCountChange = (event) => {
+        const test = event.target.value;
+        setRoomCount(test);
+      }
+
+    const [city, setCity] = useState('');
+
+    const handleCityChange = (event) => {
+        const something = event.target.value;
+        setCity(something);
+      }
+
+    const [state, setState] = useState('');
+
+    const handleStateChange = (event) => {
+          const testing = event.target.value;
+          setState(testing);
+        }
+
     const fetchData = async () => {
         const url = 'http://localhost:8000/api/states/';
 
@@ -37,15 +58,17 @@ function LocationForm(props) {
               <label htmlFor="name">Name</label>
             </div>
             <div className="form-floating mb-3">
-              <input placeholder="Room count" required type="number" name="room_count" id="room_count" className="form-control" />
+                <input onChange={handleRoomCountChange} placeholder="Room count"
+                    required type="number" name="room_count" id="room_count"
+                    className="form-control" />
               <label htmlFor="room_count">Room count</label>
             </div>
             <div className="form-floating mb-3">
-              <input placeholder="City" required type="text" name="city" id="city" className="form-control" />
+              <input onChange={handleCityChange} placeholder="City" required type="text" name="city" id="city" className="form-control" />
               <label htmlFor="city">City</label>
             </div>
             <div className="mb-3">
-                <select required name="state" id="state" className="form-select">
+                <select onChange={handleStateChange} required name="state" id="state" className="form-select">
                     <option value="">Choose a state</option>
                     {states.map(state => {
                         return (
