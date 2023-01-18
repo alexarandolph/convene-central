@@ -14,10 +14,10 @@ function App(props) {
       <Nav />
       <div className="container">
         <LocationForm />
-        {/* <ConferenceForm /> */}
-        {/* <AttendConferenceForm /> */}
-        {/* <PresentationForm /> */}
-        {/* <AttendeesList attendees={props.attendees} /> */}
+        {/* <ConferenceForm />
+        <AttendConferenceForm />
+        <PresentationForm />
+        <AttendeesList attendees={props.attendees} /> */}
       </div>
     </>
   );
