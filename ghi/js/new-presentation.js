@@ -24,8 +24,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const json = JSON.stringify(Object.fromEntries(formData));
 
     const conferenceId = selectTag.options[selectTag.selectedIndex].value;
-    console.log(conferenceId)
-    const presentationUrl = `http://localhost:8000/api/conferences/${conferenceId}/presentations/`;
+    const locationUrl = `http://localhost:8000/api/conferences/${conferenceId}/presentations/`;
     const fetchConfig = {
       method: "post",
       body: json,
@@ -33,7 +32,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         'Content-Type': 'application/json',
       },
     };
-    const response = await fetch(presentationUrl, fetchConfig);
+    const response = await fetch(locationUrl, fetchConfig);
     if (response.ok) {
       formTag.reset();
       const newConference = await response.json();
