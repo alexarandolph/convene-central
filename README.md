@@ -5,9 +5,6 @@ Convene Central is an event planning tool for organizations to host in-person or
 
 ## Initialization
 - Fork and clone the repository to your local system.
-
 - Open a terminal and run the command "docker-compose build" to build the necessary images for the Conference Creator project.
-
 - Upon successful completion of the build process, run the command "docker-compose up" to start the containers and get the application up and running.
-
 - Take some time to explore and familiarize yourself with the project and its functionality.
