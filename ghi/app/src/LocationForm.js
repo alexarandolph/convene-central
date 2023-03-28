@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 
 function LocationForm () {
-  //State Selection Data
   const [states, setStates] = useState([]);
 
-  //Form Data
   const [name, setName] = useState("");
   const [roomCount, setRoomCount] = useState("");
   const [city, setCity] = useState("");
@@ -27,8 +25,6 @@ function LocationForm () {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    //Collects Data from State into an object
-    //that will be passed into our request's body
     const data = {};
 
     data.name = name;
