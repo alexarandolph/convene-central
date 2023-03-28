@@ -64,8 +64,6 @@ function AttendConferenceForm() {
     setConference(e.target.value)
   }
 
-  //Allows for the form to display on when a user has not signed in.
-  //If a user has signed in, the css class d-none is added to the unneeded piece of the interface
 
   const formClasses = (!hasSignedUp) ? '' : 'd-none';
   const messageClasses = (!hasSignedUp) ? 'alert alert-success d-none mb-0' : 'alert alert-success mb-0';
@@ -82,7 +80,7 @@ function AttendConferenceForm() {
     <div className="my-5">
       <div className="row">
         <div className="col col-sm-auto">
-          <img width="300" className="bg-white rounded shadow d-block mx-auto mb-4" src="logo.svg" />
+          <img width="300" className="bg-white rounded shadow d-block mx-auto mb-4" src={require('./central.jpeg')} />
         </div>
 
         <div className="col">

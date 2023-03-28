@@ -80,7 +80,6 @@ def api_list_conferences(request):
     else:
         content = json.loads(request.body)
 
-        # Get the Location object and put it in the content dict
         try:
             location = Location.objects.get(id=content["location"])
             content["location"] = location
@@ -232,15 +231,9 @@ def api_show_location(request, pk):
 
 @require_http_methods(["GET"])
 def api_list_states(request):
-    # Get the states from the database ordered by name
     states = State.objects.order_by('name')
-    # Create an empty list named state_list
     state_list = []
-    # For each state in the states from the database
     for state in states:
-        # Create a dictionary that contains the name and
-        # abbreviation for each state
         d = {"name": state.name, "abbreviation": state.abbreviation}
-        # Append the dictionary to the list
         state_list.append(d)
     return JsonResponse({"states": state_list})

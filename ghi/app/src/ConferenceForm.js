@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react';
 
 function ConferenceForm() {
   const [locations, setLocations] = useState([])
-
-  //Notice that we can condense all formData
-  //into one state object
   const [formData, setFormData] = useState({
     name: '',
     starts: '',
@@ -36,8 +33,6 @@ function ConferenceForm() {
 
     const fetchConfig = {
       method: "post",
-      //Because we are using one formData state object,
-      //we can now pass it directly into our request!
       body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json',
@@ -47,8 +42,6 @@ function ConferenceForm() {
     const response = await fetch(url, fetchConfig);
 
     if (response.ok) {
-      //The single formData object
-      //also allows for easier clearing of data
       setFormData({
         name: '',
         starts: '',
@@ -65,14 +58,9 @@ function ConferenceForm() {
     const value = e.target.value;
     const inputName = e.target.name;
 
-    //We can condense our form data event handling
-    //into on function by using the input name to update it
-
     setFormData({
-      //Previous form data is spread (i.e. copied) into our new state object
       ...formData,
 
-      //On top of the that data, we add the currently engaged input key and value
       [inputName]: value
     });
   }

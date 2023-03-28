@@ -25,11 +25,17 @@ function PresentationForm () {
     getData();
   }, [])
 
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const {conference} = formData;
-    const url = `http://localhost:8000/api/conferences/${conference}/presentations/`;
+    const selectedConference = conferences.find(c => c.name === formData.conference);
+    console.log(selectedConference)
+    const url = `http://localhost:8000${selectedConference.href}presentations/`
+    console.log(selectedConference.href)
+
+
 
     const fetchConfig = {
       method: "post",
@@ -58,10 +64,8 @@ function PresentationForm () {
     const value = e.target.value;
 
     setFormData({
-      //Previous form data is spread (i.e. copied) into our new state object
       ...formData,
 
-      //On top of the that data, we add the currently engaged input key and value
       [inputName]: value
     });
   }
